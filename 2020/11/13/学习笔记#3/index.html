@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>学习笔记#3 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="学习笔记#31.为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？我的看法：在内存中开辟一块连续且大小相同的空间比较容易，而开辟出连续但大小不相同的的空间则不太容易控制，且影响运行时间。C语言中各数据类型分配的储存空间都不同，故而具有相同数据类型方便操作。 2.程序一​    顺利完成。上次学了递归，还没有掌握，正好用这个题练练。 3.程序二​    看了书上的atio()函数，尝试用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习笔记#3">
+<meta property="og:url" content="http://yoursite.com/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#3/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="学习笔记#31.为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？我的看法：在内存中开辟一块连续且大小相同的空间比较容易，而开辟出连续但大小不相同的的空间则不太容易控制，且影响运行时间。C语言中各数据类型分配的储存空间都不同，故而具有相同数据类型方便操作。 2.程序一​    顺利完成。上次学了递归，还没有掌握，正好用这个题练练。 3.程序二​    看了书上的atio()函数，尝试用">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-13T14:55:51.754Z">
+<meta property="article:modified_time" content="2020-11-13T15:00:54.664Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.1.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-学习笔记#3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#3/" class="article-date">
+  <time datetime="2020-11-13T14:55:51.754Z" itemprop="datePublished">2020-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      学习笔记#3
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="学习笔记-3"><a href="#学习笔记-3" class="headerlink" title="学习笔记#3"></a>学习笔记#3</h1><h5 id="1-为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？"><a href="#1-为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？" class="headerlink" title="1.为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？"></a>1.为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？</h5><p>我的看法：在内存中开辟一块连续且大小相同的空间比较容易，而开辟出连续但大小不相同的的空间则不太容易控制，且影响运行时间。C语言中各数据类型分配的储存空间都不同，故而具有相同数据类型方便操作。</p>
+<h5 id="2-程序一"><a href="#2-程序一" class="headerlink" title="2.程序一"></a>2.程序一</h5><p>​    顺利完成。上次学了递归，还没有掌握，正好用这个题练练。</p>
+<h5 id="3-程序二"><a href="#3-程序二" class="headerlink" title="3.程序二"></a>3.程序二</h5><p>​    看了书上的atio()函数，尝试用了一下，但是每次只要一改成这个函数就没有输出….不知道原因。</p>
+<p>​    思路借鉴了网上程序，利用一个flag值判断是否是在一个数字之后。</p>
+<p>​    处理字符串只用一个循环（这对我做下一题的思维产生了限制orz</p>
+<h5 id="4-程序三"><a href="#4-程序三" class="headerlink" title="4.程序三"></a>4.程序三</h5><p>​    想了很久。因为在延续上一题一个循环的想法，在判断 ‘.’ 的时候要想录入得在内层循环改变计数菌的值。最后逻辑太复杂咋写都不对，放弃，同时意识到不应该用一个循环。</p>
+<p>​    后来又在网上找到大佬代码….（膜拜 看的很懂，启发也很大，各个模块分工明确，检查是否为数字、计算输出值、录入数组均分开编写。我也深刻体会到了分模块对一个清晰的逻辑的重要性，而且开始敲之前，一定要有一个好的思路！！不要朦胧之中就开始写，很浪费时间。</p>
+<p>这几个题目做的有点抢进度，因为我只是看完了知识部分还没做书上练习就开始做题orz。</p>
+<p>赶去巩固字符串基础，后面的几个程序示例下次再想（逃</p>
+<h2 id="提高的代码理解"><a href="#提高的代码理解" class="headerlink" title="提高的代码理解"></a>提高的代码理解</h2><h5 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h5><p>分析：</p>
+<p>char* c[]定义了一个一维的字符串数组，char** cp[]={}是定义了一个指针数组，数组中每个元素都是char** 的指针，其实就是char*** 类型，而最后声明的cpp其实就是cp，只不过cp是数组名不能改变，而cpp的值可以改变（即进行后面的自加操作）</p>
+<p>第一行输出：++cpp是指cp+1, * (cp+1）是cp[1]=c+2,** (cp+1)=*(c+2)=‘POINT’</p>
+<p>第二行输出：++cpp=cp+2; * ++cpp=* （cp+2）=c+1; –(c+1)=c; *(c+1)=“ENTER”；最后又加三即从enter的第四位开始输出至结束</p>
+<p>第三行输出：数组里面用负数，一开始完全没看懂….后来查阅资料，得知这种操作的意义。此时cpp已经等于cp+2，所以cpp[-2]=* (cpp-2)=* (cp+2-2)=* cp (=cp[0]) =c+3,再加三同理</p>
+<p>第四行输出：由上一行。[]不改变cpp的值，所以cpp==cp+2；先算前面一个[-1],所以cpp[-1]=* (cpp-1)=* (cp+2-1)= * (cp+1)=c+2; 再来一个[-1]得：(c+2)[-1]=* (c+2-1)=* (c+1)=“NEW”；再加三同理。</p>
+<p>2.</p>
+<p>分析：</p>
+<p>首先0x100000是一个地址，而0x100000是十六进制下的0</p>
+<p>公式：p+n 的地址值 =（p）+n*sizeof（p）</p>
+<p>通过sizeof（Test）=32可得Test占32个字节，则第一个输出是则是（p）+1*32=0x100020</p>
+<p>第二个就是把p强制转换成一个unsigned long型的数，所以按照加法运算可以得0x100001</p>
+<p>第三个就是把p强制转换成一个指向int的指针，所以（p）+1*sizeof（unsigned int）=0x100004</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#3/" data-id="ckhgdw7jz0000dkv55jz89n36" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          学习笔记#4
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">学习笔记#2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">C学习笔记</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">C学习笔记</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#4/">学习笔记#4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#3/">学习笔记#3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#2/">学习笔记#2</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#1/">学习笔记#1</a>
+          </li>
+        
+          <li>
+            <a href="/2020/08/29/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A01/">C语言学习1</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

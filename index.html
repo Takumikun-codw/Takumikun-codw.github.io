@@ -64,6 +64,151 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-学习笔记#4" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#4/" class="article-date">
+  <time datetime="2020-11-13T14:55:53.104Z" itemprop="datePublished">2020-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#4/">学习笔记#4</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="学习笔记-4"><a href="#学习笔记-4" class="headerlink" title="学习笔记#4"></a>学习笔记#4</h1><h4 id="结构体、联合体、枚举类型结构体"><a href="#结构体、联合体、枚举类型结构体" class="headerlink" title="结构体、联合体、枚举类型结构体"></a>结构体、联合体、枚举类型结构体</h4><p>（html直呼内行</p>
+<p>能力有限，竟然用最基础的冒泡完成题目orz，需要多学点排序算法了233</p>
+<p>然后目前这些东西给我的感觉就是让程序更有逻辑、条理清晰，编写更方便，比起一个一个创建数组简直好了不知道多少倍。</p>
+<h4 id="main函数の参数（argc、-argv）"><a href="#main函数の参数（argc、-argv）" class="headerlink" title="main函数の参数（argc、 argv）"></a>main函数の参数（argc、 argv）</h4><p>这个内容书上貌似没有讲解（？通过上网查询，编写了一个简单的程序测试了一下这两行个参数。argc即为通过命令行向main函数传递的参数个数；arcv[]是指针数组，用来存放指向字符串参数的指针，每一个元素指向一个参数。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#4/" data-id="ckhgdw7kg0002dkv5dw0lbbc4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-学习笔记#3" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#3/" class="article-date">
+  <time datetime="2020-11-13T14:55:51.754Z" itemprop="datePublished">2020-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#3/">学习笔记#3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="学习笔记-3"><a href="#学习笔记-3" class="headerlink" title="学习笔记#3"></a>学习笔记#3</h1><h5 id="1-为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？"><a href="#1-为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？" class="headerlink" title="1.为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？"></a>1.为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？</h5><p>我的看法：在内存中开辟一块连续且大小相同的空间比较容易，而开辟出连续但大小不相同的的空间则不太容易控制，且影响运行时间。C语言中各数据类型分配的储存空间都不同，故而具有相同数据类型方便操作。</p>
+<h5 id="2-程序一"><a href="#2-程序一" class="headerlink" title="2.程序一"></a>2.程序一</h5><p>​    顺利完成。上次学了递归，还没有掌握，正好用这个题练练。</p>
+<h5 id="3-程序二"><a href="#3-程序二" class="headerlink" title="3.程序二"></a>3.程序二</h5><p>​    看了书上的atio()函数，尝试用了一下，但是每次只要一改成这个函数就没有输出….不知道原因。</p>
+<p>​    思路借鉴了网上程序，利用一个flag值判断是否是在一个数字之后。</p>
+<p>​    处理字符串只用一个循环（这对我做下一题的思维产生了限制orz</p>
+<h5 id="4-程序三"><a href="#4-程序三" class="headerlink" title="4.程序三"></a>4.程序三</h5><p>​    想了很久。因为在延续上一题一个循环的想法，在判断 ‘.’ 的时候要想录入得在内层循环改变计数菌的值。最后逻辑太复杂咋写都不对，放弃，同时意识到不应该用一个循环。</p>
+<p>​    后来又在网上找到大佬代码….（膜拜 看的很懂，启发也很大，各个模块分工明确，检查是否为数字、计算输出值、录入数组均分开编写。我也深刻体会到了分模块对一个清晰的逻辑的重要性，而且开始敲之前，一定要有一个好的思路！！不要朦胧之中就开始写，很浪费时间。</p>
+<p>这几个题目做的有点抢进度，因为我只是看完了知识部分还没做书上练习就开始做题orz。</p>
+<p>赶去巩固字符串基础，后面的几个程序示例下次再想（逃</p>
+<h2 id="提高的代码理解"><a href="#提高的代码理解" class="headerlink" title="提高的代码理解"></a>提高的代码理解</h2><h5 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h5><p>分析：</p>
+<p>char* c[]定义了一个一维的字符串数组，char** cp[]={}是定义了一个指针数组，数组中每个元素都是char** 的指针，其实就是char*** 类型，而最后声明的cpp其实就是cp，只不过cp是数组名不能改变，而cpp的值可以改变（即进行后面的自加操作）</p>
+<p>第一行输出：++cpp是指cp+1, * (cp+1）是cp[1]=c+2,** (cp+1)=*(c+2)=‘POINT’</p>
+<p>第二行输出：++cpp=cp+2; * ++cpp=* （cp+2）=c+1; –(c+1)=c; *(c+1)=“ENTER”；最后又加三即从enter的第四位开始输出至结束</p>
+<p>第三行输出：数组里面用负数，一开始完全没看懂….后来查阅资料，得知这种操作的意义。此时cpp已经等于cp+2，所以cpp[-2]=* (cpp-2)=* (cp+2-2)=* cp (=cp[0]) =c+3,再加三同理</p>
+<p>第四行输出：由上一行。[]不改变cpp的值，所以cpp==cp+2；先算前面一个[-1],所以cpp[-1]=* (cpp-1)=* (cp+2-1)= * (cp+1)=c+2; 再来一个[-1]得：(c+2)[-1]=* (c+2-1)=* (c+1)=“NEW”；再加三同理。</p>
+<p>2.</p>
+<p>分析：</p>
+<p>首先0x100000是一个地址，而0x100000是十六进制下的0</p>
+<p>公式：p+n 的地址值 =（p）+n*sizeof（p）</p>
+<p>通过sizeof（Test）=32可得Test占32个字节，则第一个输出是则是（p）+1*32=0x100020</p>
+<p>第二个就是把p强制转换成一个unsigned long型的数，所以按照加法运算可以得0x100001</p>
+<p>第三个就是把p强制转换成一个指向int的指针，所以（p）+1*sizeof（unsigned int）=0x100004</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#3/" data-id="ckhgdw7jz0000dkv55jz89n36" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-学习笔记#2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#2/" class="article-date">
+  <time datetime="2020-11-13T14:55:49.879Z" itemprop="datePublished">2020-11-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#2/">学习笔记#2</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="学习笔记-2"><a href="#学习笔记-2" class="headerlink" title="学习笔记#2"></a>学习笔记#2</h1><h4 id="1-全局变量与局部变量"><a href="#1-全局变量与局部变量" class="headerlink" title="1.全局变量与局部变量"></a>1.全局变量与局部变量</h4><h5 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h5><p>作用域默认为整个程序</p>
+<h5 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h5><p>作用域仅限于函数内部</p>
+<h5 id="易错点"><a href="#易错点" class="headerlink" title="*易错点"></a>*易错点</h5><p>1.尽量不要使用重复的变量名。虽然在局部函数中变量的使用遵循就近原则，且作用域不同变量储存的位置也不同，但使用重复的变量名是个很不好的习惯；</p>
+<p>2.{ }可以划分出一块独立的函数作用域、代码块作用域（循环、判断条件等），独立于所有{ }之外的是源文件，包括.c .h以及全局变量。</p>
+<h4 id="2-函数"><a href="#2-函数" class="headerlink" title="2.函数"></a>2.函数</h4><h5 id="return"><a href="#return" class="headerlink" title="return"></a>return</h5><p>关键字return可以让函数与主调函数通信</p>
+<h5 id="传地址与传引用"><a href="#传地址与传引用" class="headerlink" title="*传地址与传引用"></a>*传地址与传引用</h5><p>传地址会在局部函数中创建一个实参的地址，使形参地址与实参相同，进而修改实参的值，但若形参地址改变（如通过++操作改变）则无法再改变实参的值；</p>
+<p>传引用则是由主调函数将实参的地址传给局部函数，局部函数中的形参将相当于实参的别名，对形参进行的改变都会反映到实参中。</p>
+<p>我的理解是，这两者主要区别在于<strong>在局部函数中对形参地址进行操作是否会对实参地址产生影响</strong>。</p>
+<h5 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h5><p>递归真的跟数列好像啊233</p>
+<p>CSDN一篇关于递归的讲解让我初步理解递归：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37907797/article/details/102767860?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160404207019215646554260%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&amp;request_id=160404207019215646554260&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-1-102767860.pc_search_result_cache&amp;utm_term=%E9%80%92%E5%BD%92&amp;spm=1018.2118.3001.4449">https://blog.csdn.net/m0_37907797/article/details/102767860?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522160404207019215646554260%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&amp;request_id=160404207019215646554260&amp;biz_id=0&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_v2~rank_v28-1-102767860.pc_search_result_cache&amp;utm_term=%E9%80%92%E5%BD%92&amp;spm=1018.2118.3001.4449</a></p>
+<p>三要素（三步法）真的很清晰，虽然很初级，但帮我以不同的思路完成了一些程序。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#2/" data-id="ckhgdw7ka0001dkv51mal87r4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-学习笔记#1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#1/" class="article-date">
@@ -73,6 +218,16 @@
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#1/">学习笔记#1</a>
+    </h1>
+  
+
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -266,15 +421,23 @@
       <ul>
         
           <li>
-            <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#1/">(no title)</a>
+            <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#4/">学习笔记#4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#3/">学习笔记#3</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#2/">学习笔记#2</a>
+          </li>
+        
+          <li>
+            <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#1/">学习笔记#1</a>
           </li>
         
           <li>
             <a href="/2020/08/29/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A01/">C语言学习1</a>
-          </li>
-        
-          <li>
-            <a href="/2020/08/22/hello-world/">Hello World</a>
           </li>
         
       </ul>
