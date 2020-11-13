@@ -7,11 +7,15 @@
   
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="学习笔记#11.代码到.exe可执行文件原来刚学C语言的时候每次文件夹中都会生成可执行文件，但是没有太关注原理，最多也就知道日常报错的编译部分。经查阅资料，我了解到一个C语言程序代码到可执行文件的前世今生是：源代码→编译→目标代码→链接→可执行代码。 编译将源代码文件(.c)通过编译器生成目标代码文件(.obj)，源代码即为程序员手打内容，包含头文件与主函数等部分。目标代码文件则储存经编译器转换后">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#1/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="学习笔记#11.代码到.exe可执行文件原来刚学C语言的时候每次文件夹中都会生成可执行文件，但是没有太关注原理，最多也就知道日常报错的编译部分。经查阅资料，我了解到一个C语言程序代码到可执行文件的前世今生是：源代码→编译→目标代码→链接→可执行代码。 编译将源代码文件(.c)通过编译器生成目标代码文件(.obj)，源代码即为程序员手打内容，包含头文件与主函数等部分。目标代码文件则储存经编译器转换后">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-13T14:52:04.054Z">
+<meta property="article:modified_time" content="2020-11-10T04:50:34.590Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -62,9 +66,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-学习笔记#1" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-学习笔记#1" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#1/" class="article-date">
   <time datetime="2020-11-13T14:52:04.054Z" itemprop="datePublished">2020-11-13</time>
@@ -116,112 +118,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-C语言学习1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/29/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A01/" class="article-date">
-  <time datetime="2020-08-29T01:45:46.000Z" itemprop="datePublished">2020-08-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/29/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A01/">C语言学习1</a>
-    </h1>
+    <a href="/2020/08/29/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A01/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">C语言学习1</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Takumi将从基本的C语言学习开始记录自己的学习过程与思考。（参考资料：C primer plus）</p>
-<h1 id="编程练习5-11-9"><a href="#编程练习5-11-9" class="headerlink" title="编程练习5.11.9"></a>编程练习5.11.9</h1><p>编写一个程序，要求用户输入一个华氏温度。程序应读取double类型的值作为温度值，并把该值作为参数传递给一个用户自定义的函数Temperatures（）。该函数计算摄氏温度和开式温度，并以小数点后面两位数字的精度显示3种温度。要使用不同的温标来表示这3个温度值。下面是摄氏温度转开式温度的公式：（略）</p>
-<p>Temperatures（）函数中用const创建温度转换中使用的变量。在main（）函数中使用一个循环让用户重复输入温度，当用户输入q或其他非数字时，循环结束。</p>
-<p>我第一次编写的程序：</p>
-<p>#include &lt;stdio.h&gt;</p>
-<p>int main()<br>{<br>    double Fa;<br>    printf(“Enter a temperature in Fahrenheit:”);<br>    scanf(“%f”, &amp;Fa);<br>    while(Fa &gt; 0) {<br>        Temperatures(Fa);<br>        printf(“Enter next:”);<br>        scanf(“%f”,&amp;Fa);<br>    }<br>    getchar();<br>    return 0;<br>}<br>void Temperatures(double n)<br>{<br>    const double C_TO_K = 273.16;<br>    const double F_TO_C = 32.0;<br>    double Ce, Ke;<br>    Ce = 5.0/9.0*(n - F_TO_C);<br>    Ke = Ce + C_TO_K;<br>    printf(“%.2f Fahrenheit is %.2f in Celsius and %.2f in Kelvin.\n”, n, Ce, Ke);<br>    return 0;</p>
-<p>}</p>
-<p>没有完全满足题设要求。因为我发现输入字符不会终止循环，反而会进入无限循环。</p>
-<p>原因出在while后面的条件。因为之前做过很多要求输入正值的练习，所以这里欠考虑了。</p>
-<p>改进后代码：</p>
-<p>#include &lt;stdio.h&gt;<br>#include &lt;stdlib.h&gt;</p>
-<p>int main()<br>{<br>    double Fa;<br>    printf(“Enter a temperature in Fahrenheit:”);<br>    while(scanf(“%f”, &amp;Fa) == 1){<br>        Temperatures(Fa);<br>        printf(“Enter next:”);<br>        scanf(“%f”,&amp;Fa);<br>    }<br>    getchar();<br>    return 0;<br>}<br>int Temperatures(double Fahrenheit)<br>{<br>    const double C_TO_K = 273.16;<br>    const double F_TO_C = 32.0;<br>    double Ce, Ke;<br>    Ce = 5.0/9.0*(Fahrenheit - F_TO_C);<br>    Ke = Ce + C_TO_K;<br>    printf(“%.2f Fahrenheit is %.2f in Celsius and %.2f in Kelvin.\n”, Fahrenheit, Ce, Ke);<br>    return 0;<br>}</p>
-<p>这里利用了scanf（）函数的返回值。scanf（）函数返回读取数据的数量，所以输入数字则返回1，读取字符等非数字则返回0，从而结束循环。</p>
-<p>##掌握scanf（）返回值的利用</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/29/C%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A01/" data-id="ckef6ow4f00007kv5fh4f0236" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">C学习笔记</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/08/22/hello-world/" class="article-date">
-  <time datetime="2020-08-22T09:24:50.707Z" itemprop="datePublished">2020-08-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/22/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/08/22/hello-world/" data-id="ckef6ow4k00017kv58kohg4rg" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
