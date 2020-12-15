@@ -64,6 +64,157 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaScript 学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/12/15/JavaScript%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
+  <time datetime="2020-12-15T14:22:41.660Z" itemprop="datePublished">2020-12-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/15/JavaScript%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">JavaScript 学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="2020-12-14"><a href="#2020-12-14" class="headerlink" title="2020.12.14"></a>2020.12.14</h3><p>正式启航~</p>
+<h5 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h5><p>JS的变量声明方式统一为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var a;</span><br></pre></td></tr></table></figure>
+
+<p>其数据类型在程序运行中确定，如可进行初始化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 10;&#x2F;&#x2F;表明为Number类型</span><br><span class="line">var ch &#x3D; &#39;Takumi&#39;;&#x2F;&#x2F;表明为字符串类型</span><br></pre></td></tr></table></figure>
+
+<p>最独特的一点是变量的类型可以随意切换，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; 10；</span><br><span class="line">a &#x3D; &#39;Takumi&#39;;</span><br></pre></td></tr></table></figure>
+
+<p>是被允许的。</p>
+<h5 id="五种数据类型"><a href="#五种数据类型" class="headerlink" title="五种数据类型"></a>五种数据类型</h5><p>number, string, boolean, undefined, null</p>
+<p>可以用关键字typeof获取数据类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var num &#x3D; 10;</span><br><span class="line">console.log(typeof num); &#x2F;&#x2F;输出number</span><br></pre></td></tr></table></figure>
+
+<p>重要地，由prompt取得的数据均属于string型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var age &#x3D; prompt(&#39;请输入年龄：&#39;);</span><br><span class="line">console.log(typeof age);&#x2F;&#x2F;输出string</span><br></pre></td></tr></table></figure>
+
+<h5 id="字符串型"><a href="#字符串型" class="headerlink" title="字符串型"></a>字符串型</h5><p>获取字符串长度的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str &#x3D; &#39;I am learning JS.&#39;</span><br><span class="line">var a &#x3D; str.length;</span><br></pre></td></tr></table></figure>
+
+<p>字符串的拼接：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&#39;我是&#39; + &#39;菜鸡&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>并且强大的一点在于字符串和其他类型相拼接，最终结果是字符串：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&#39;我今年&#39; + 18);</span><br></pre></td></tr></table></figure>
+
+<p> 并且也当然不局限于两个对象和字面量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var age &#x3D; 18;</span><br><span class="line">console.log(&#39;我今年&#39; + age + &#39;岁&#39;);&#x2F;&#x2F;变量不要写入引号内</span><br></pre></td></tr></table></figure>
+
+<h5 id="数据类型转换"><a href="#数据类型转换" class="headerlink" title="数据类型转换"></a>数据类型转换</h5><h6 id="其他–-gt-字符串"><a href="#其他–-gt-字符串" class="headerlink" title="其他–&gt;字符串"></a>其他–&gt;字符串</h6><p>1.变量.toString()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var num &#x3D; 10;</span><br><span class="line">var str &#x3D; num.toString();</span><br></pre></td></tr></table></figure>
+
+<p>2.String(变量)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var num &#x3D; 10;</span><br><span class="line">console.log(String(num));</span><br></pre></td></tr></table></figure>
+
+<p>3.利用拼接字符串的方法（隐式转换，most frequently used</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var num &#x3D; 10;</span><br><span class="line">console.log(num + &#39; &#39;);&#x2F;&#x2F;加上空格</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2020-12-15"><a href="#2020-12-15" class="headerlink" title="2020.12.15"></a>2020.12.15</h3><h6 id="其他–-gt-数字"><a href="#其他–-gt-数字" class="headerlink" title="其他–&gt;数字"></a>其他–&gt;数字</h6><p>1.转换为整数parseInt()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">console.log(parseInt(&#39;3.14&#39;));&#x2F;&#x2F;输出3</span><br><span class="line">console.log(parseInt(&#39;100px&#39;));&#x2F;&#x2F;输出100</span><br><span class="line">console.log(parseInt(&#39;I am 18.&#39;))&#x2F;&#x2F;输出NaN</span><br></pre></td></tr></table></figure>
+
+<p>初级应用可以把prompt获取的数据转换为number！</p>
+<p>2.转换为小数parseFlaot()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(parseFlaot(&#39;3.14&#39;))&#x2F;&#x2F;这样才能输出3.14而不被*割</span><br></pre></td></tr></table></figure>
+
+<p>3.Number(变量)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var str &#x3D; &#39;18&#39;;</span><br><span class="line">console.log(Number(str));&#x2F;&#x2F;输出数字18</span><br></pre></td></tr></table></figure>
+
+<p>4.利用四则运算符（除“+”外）（隐式转换</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&#39;18&#39; - 1);&#x2F;&#x2F;输出数字17</span><br></pre></td></tr></table></figure>
+
+<p>//故想实现简单加法器（读取两个输入再求和），必须将输入数据先转换为数字型才能求和，而减法器等则不需要</p>
+<h6 id="其他–-gt-布尔"><a href="#其他–-gt-布尔" class="headerlink" title="其他–&gt;布尔"></a>其他–&gt;布尔</h6><p>唯一方法：Boolean(变量)</p>
+<p>代表空、否定的值都会被转换为false， 如’’、0、 NaN、null、 undefined</p>
+<p>其余值则均被转换为true</p>
+<h5 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h5><p>等于运算符 == 和大于小于大于等于小于等于运算符，默认转换类型，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cosole.log(18 &#x3D;&#x3D; &#39;18&#39;)&#x2F;&#x2F;输出true，且默认将字符串型转换为数字型</span><br></pre></td></tr></table></figure>
+
+<p>而对于全等符号 === ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(18 &#x3D;&#x3D;&#x3D; &#39;18&#39;)&#x2F;&#x2F;输出false，因为数据类型不同</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/12/15/JavaScript%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="ckiq2sriv0000eov5b7yy7h9i" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Leetcode刷题之简单" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/12/14/Leetcode%E5%88%B7%E9%A2%98%E4%B9%8B%E7%AE%80%E5%8D%95/" class="article-date">
+  <time datetime="2020-12-14T08:36:10.253Z" itemprop="datePublished">2020-12-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/14/Leetcode%E5%88%B7%E9%A2%98%E4%B9%8B%E7%AE%80%E5%8D%95/">Leetcode简单难度AC题解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="7-整数反转"><a href="#7-整数反转" class="headerlink" title="7.整数反转"></a>7.整数反转</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int reverse(int x)&#123;</span><br><span class="line">    long a &#x3D; 0;</span><br><span class="line">    while(x)</span><br><span class="line">    &#123;</span><br><span class="line">        a &#x3D; a * 10 + (x % 10);  </span><br><span class="line">        x &#x2F;&#x3D; 10;</span><br><span class="line">    &#125;</span><br><span class="line">    if(a &gt; INT_MAX || a &lt; INT_MIN)</span><br><span class="line">        return 0;</span><br><span class="line">    else return a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-回文数"><a href="#9-回文数" class="headerlink" title="9.回文数"></a>9.回文数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">bool isPalindrome(int x)&#123;</span><br><span class="line">    if(x &#x3D;&#x3D; 0)</span><br><span class="line">        return true;</span><br><span class="line">    if(x &lt; 0 || x%10 &#x3D;&#x3D; 0)</span><br><span class="line">        return false;</span><br><span class="line">    long a &#x3D; 0;</span><br><span class="line">    long t &#x3D; x;</span><br><span class="line">    while(x)</span><br><span class="line">    &#123;</span><br><span class="line">        a &#x3D; a * 10 + (x % 10);</span><br><span class="line">        x &#x2F;&#x3D; 10;</span><br><span class="line">    &#125;</span><br><span class="line">    if(a &#x3D;&#x3D; t)</span><br><span class="line">        return true;</span><br><span class="line">    else return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>//有点懒，直接把上一题的思路搬过来了orz，但是果然不出所料效率奇低</p>
+<h3 id="13-罗马数字转整数"><a href="#13-罗马数字转整数" class="headerlink" title="13.罗马数字转整数"></a>13.罗马数字转整数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">int romanToInt(char * s)&#123;</span><br><span class="line">    int i, re &#x3D; 0;</span><br><span class="line">    </span><br><span class="line">    for(i &#x3D; 0; i &lt; strlen(s); i++)</span><br><span class="line">    &#123;   </span><br><span class="line">        if(s[i] &#x3D;&#x3D; &#39;V&#39;)</span><br><span class="line">            re +&#x3D; 5;</span><br><span class="line">        if(s[i] &#x3D;&#x3D; &#39;L&#39;)</span><br><span class="line">            re +&#x3D; 50;</span><br><span class="line">        if(s[i] &#x3D;&#x3D; &#39;D&#39;)</span><br><span class="line">            re +&#x3D; 500;</span><br><span class="line">        if(s[i] &#x3D;&#x3D; &#39;M&#39;)</span><br><span class="line">            re +&#x3D; 1000;</span><br><span class="line">        if(s[i] &#x3D;&#x3D; &#39;I&#39;)</span><br><span class="line">        &#123;</span><br><span class="line">            if(s[i+1] &#x3D;&#x3D; &#39;V&#39;)</span><br><span class="line">            &#123;   re +&#x3D; 4;</span><br><span class="line">                i++;</span><br><span class="line">                continue;        &#x2F;&#x2F;跳过下一位不计算</span><br><span class="line">            &#125;</span><br><span class="line">            else if(s[i+1] &#x3D;&#x3D; &#39;X&#39;)</span><br><span class="line">            &#123;   re +&#x3D; 9;</span><br><span class="line">                i++;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            else if(s[i+1] !&#x3D; &#39;V&#39; &amp;&amp; s[i+1] !&#x3D; &#39;X&#39;)</span><br><span class="line">                re++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(s[i] &#x3D;&#x3D; &#39;X&#39;)</span><br><span class="line">        &#123;</span><br><span class="line">            if(s[i+1] &#x3D;&#x3D; &#39;L&#39;)</span><br><span class="line">            &#123;   re +&#x3D; 40;</span><br><span class="line">                i++;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            else if(s[i+1] &#x3D;&#x3D; &#39;C&#39;)</span><br><span class="line">            &#123;   re +&#x3D; 90;</span><br><span class="line">                i++;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            else if(s[i+1] !&#x3D; &#39;L&#39; &amp;&amp; s[i+1] !&#x3D; &#39;C&#39;)</span><br><span class="line">                re +&#x3D; 10;;</span><br><span class="line">        &#125;</span><br><span class="line">        if(s[i] &#x3D;&#x3D; &#39;C&#39;)</span><br><span class="line">        &#123;</span><br><span class="line">            if(s[i+1] &#x3D;&#x3D; &#39;D&#39;)</span><br><span class="line">            &#123;   re +&#x3D; 400;</span><br><span class="line">                i++;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            else if(s[i+1] &#x3D;&#x3D; &#39;M&#39;)</span><br><span class="line">            &#123;   re +&#x3D; 900;</span><br><span class="line">                i++;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line">            else if(s[i+1] !&#x3D; &#39;D&#39; &amp;&amp; s[i+1] !&#x3D; &#39;M&#39;)</span><br><span class="line">                re +&#x3D; 100;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return re;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>//最弱的题还用了最复杂的解法…..</p>
+<h3 id="14-最长公共前缀"><a href="#14-最长公共前缀" class="headerlink" title="14.最长公共前缀"></a>14.最长公共前缀</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">char * longestCommonPrefix(char ** strs, int strsSize)&#123;</span><br><span class="line">    if(strsSize &#x3D;&#x3D; 0) return &quot;&quot;;</span><br><span class="line">    if(strsSize &#x3D;&#x3D; 1) return strs[0];</span><br><span class="line">    int i, j;</span><br><span class="line">    for(i &#x3D; 1; i &lt; strsSize; i++)      &#x2F;&#x2F;遍历除第一个字符串外的数组，相当于以第一个为基准</span><br><span class="line">    &#123;</span><br><span class="line">        for(j &#x3D; 0; j &lt; strlen(strs[0]); j++)    &#x2F;&#x2F;遍历每个字符</span><br><span class="line">        &#123;</span><br><span class="line">            if(strs[0][j] !&#x3D; strs[i][j])    &#x2F;&#x2F;若开始用出现不相等的情况</span><br><span class="line">            &#123;</span><br><span class="line">                strs[0][j] &#x3D; &#39;\0&#39;;        &#x2F;&#x2F;就在此处截断字符串</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return strs[0];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>很喜欢这个题，好久没使用过二维数组指针了（</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/12/14/Leetcode%E5%88%B7%E9%A2%98%E4%B9%8B%E7%AE%80%E5%8D%95/" data-id="ckiq2srj80001eov58e1oc9n9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%98%AF%E5%88%B7%E9%A2%98%E5%91%80%EF%BC%81/" rel="tag">是刷题呀！</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-# 杭电OJ" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/11/21/#%20%E6%9D%AD%E7%94%B5OJ/" class="article-date">
@@ -86,7 +237,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="杭电OJ"><a href="#杭电OJ" class="headerlink" title="杭电OJ"></a>杭电OJ</h1><h3 id="T2000"><a href="#T2000" class="headerlink" title="T2000"></a>T2000</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char ch[3], temp;</span><br><span class="line">	int i, j;</span><br><span class="line">	while((scanf(&quot;%s&quot;, ch)) !&#x3D; EOF)</span><br><span class="line">	&#123;</span><br><span class="line">		for(j &#x3D; 0; j &lt; 2; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			for(i &#x3D; 0; i &lt; 2 - j; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				if(ch[i] &gt; ch[i + 1])</span><br><span class="line">					temp &#x3D; ch[i];</span><br><span class="line">					ch[i] &#x3D; ch[i + 1];</span><br><span class="line">					ch[i + 1] &#x3D; temp;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		for(i &#x3D; 0; i &lt; 3; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;%c&quot;, ch[i]);</span><br><span class="line">			if(ch[i + 1] !&#x3D; &#39;\0&#39;)</span><br><span class="line">				printf(&quot; &quot;);</span><br><span class="line">			else printf(&quot;\n&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h3 id="T2000"><a href="#T2000" class="headerlink" title="T2000"></a>T2000</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	char ch[3], temp;</span><br><span class="line">	int i, j;</span><br><span class="line">	while((scanf(&quot;%s&quot;, ch)) !&#x3D; EOF)</span><br><span class="line">	&#123;</span><br><span class="line">		for(j &#x3D; 0; j &lt; 2; j++)</span><br><span class="line">		&#123;</span><br><span class="line">			for(i &#x3D; 0; i &lt; 2 - j; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				if(ch[i] &gt; ch[i + 1])</span><br><span class="line">					temp &#x3D; ch[i];</span><br><span class="line">					ch[i] &#x3D; ch[i + 1];</span><br><span class="line">					ch[i + 1] &#x3D; temp;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		for(i &#x3D; 0; i &lt; 3; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;%c&quot;, ch[i]);</span><br><span class="line">			if(ch[i + 1] !&#x3D; &#39;\0&#39;)</span><br><span class="line">				printf(&quot; &quot;);</span><br><span class="line">			else printf(&quot;\n&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -163,6 +314,34 @@
 <p>yysy，我把所有可能的输入都试遍了，都没有问题，但就是过不了oj，没办法写了一般版本：(不过此题用字符串函数是杀鸡焉用牛刀)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;stdio.h&gt;</span><br><span class="line"></span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">	char a[101];</span><br><span class="line">	int i, j, k;</span><br><span class="line">	while (gets(a))</span><br><span class="line">	&#123;</span><br><span class="line">		j &#x3D; 0;</span><br><span class="line">		k &#x3D; 0;</span><br><span class="line">		for (i &#x3D; 0; a[i] !&#x3D; &#39;\0&#39;; i++)    &#x2F;&#x2F;两种标记循环结束的方法</span><br><span class="line">		&#123;</span><br><span class="line">			if (a[i] &gt; j)</span><br><span class="line">			&#123;</span><br><span class="line">				j &#x3D; a[i];</span><br><span class="line">				k &#x3D; i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		for (i &#x3D; 0; a[i] !&#x3D; &#39;\0&#39;; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			if (a[i] &#x3D;&#x3D; a[k])</span><br><span class="line">				printf(&quot;%c(max)&quot;, a[i]);</span><br><span class="line">			else</span><br><span class="line">				printf(&quot;%c&quot;, a[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		printf(&quot;\n&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="T2026"><a href="#T2026" class="headerlink" title="T2026"></a>T2026</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char sen[100];</span><br><span class="line">    while(gets(sen))</span><br><span class="line">    &#123;</span><br><span class="line">        int i;</span><br><span class="line">        sen[0] -&#x3D; 32;</span><br><span class="line">        for(i &#x3D; 0; i &lt; strlen(sen); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(sen[i] &#x3D;&#x3D; &#39; &#39;)</span><br><span class="line">                sen[i+1] -&#x3D; 32;</span><br><span class="line">        &#125;</span><br><span class="line">        puts(sen);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;也可以用另一种解法，即include一个ctype.h使用toupper()直接转换大写</span><br></pre></td></tr></table></figure>
+
+<h3 id="T2027"><a href="#T2027" class="headerlink" title="T2027"></a>T2027</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n, j &#x3D; 0;</span><br><span class="line">    char s[100];</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    getchar();           &#x2F;&#x2F;！一定要有，不然&#39;\n&#39;会被gets吃到</span><br><span class="line">    while(++j &lt;&#x3D; n)</span><br><span class="line">    &#123;</span><br><span class="line">        gets(s);</span><br><span class="line">        int c1 &#x3D; 0, c2 &#x3D; 0, c3 &#x3D; 0, c4 &#x3D; 0, c5 &#x3D; 0;</span><br><span class="line">        for(int i &#x3D; 0; i &lt; strlen(s); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(s[i] &#x3D;&#x3D; &#39;a&#39;)</span><br><span class="line">                c1++;</span><br><span class="line">            if(s[i] &#x3D;&#x3D; &#39;e&#39;)</span><br><span class="line">                c2++;</span><br><span class="line">            if(s[i] &#x3D;&#x3D; &#39;u&#39;)</span><br><span class="line">                c3++;</span><br><span class="line">            if(s[i] &#x3D;&#x3D; &#39;i&#39;)</span><br><span class="line">                c4++;</span><br><span class="line">            else if(s[i] &#x3D;&#x3D; &#39;o&#39;)</span><br><span class="line">                c5++;</span><br><span class="line">        &#125;</span><br><span class="line">        if(j &lt;&#x3D; n - 1)</span><br><span class="line">            printf(&quot;a:%d\ne:%d\ni:%d\no:%d\nu:%d\n\n&quot;, c1, c2, c4, c5, c3);</span><br><span class="line">        if(j &#x3D;&#x3D; n)</span><br><span class="line">             printf(&quot;a:%d\ne:%d\ni:%d\no:%d\nu:%d\n&quot;, c1, c2, c4, c5, c3);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;注意PE！搞心态orz</span><br><span class="line">&#x2F;&#x2F;当然switch更简洁</span><br></pre></td></tr></table></figure>
+
+<h3 id="T2028"><a href="#T2028" class="headerlink" title="T2028"></a>T2028</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n, is_times  &#x3D; 0;</span><br><span class="line">    while((scanf(&quot;%d&quot;, &amp;n)) !&#x3D; EOF)</span><br><span class="line">    &#123;</span><br><span class="line">        int a[100];</span><br><span class="line">        for(int i &#x3D; 0; i &lt; n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            scanf(&quot;%d&quot;, &amp;a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        int j &#x3D; 1;</span><br><span class="line">        while(j++)               &#x2F;&#x2F;枚举法找最大公倍数，时间复杂度为o(n)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int i &#x3D; 0; i &lt; n; i++)          </span><br><span class="line">            &#123;</span><br><span class="line">                if(j%a[i] &#x3D;&#x3D; 0)</span><br><span class="line">                    is_times &#x3D; 1;</span><br><span class="line">                else &#123;</span><br><span class="line">                    is_times &#x3D; 0;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            if(is_times)&#123;</span><br><span class="line">                printf(&quot;%d\n&quot;, j);</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="T2029"><a href="#T2029" class="headerlink" title="T2029"></a>T2029</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    char s[100];</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    getchar();</span><br><span class="line">    int count &#x3D; 0, is_huiwen &#x3D; 0;</span><br><span class="line">    while(count++ &lt; n &amp;&amp; gets(s))</span><br><span class="line">    &#123;</span><br><span class="line">        for(int i &#x3D; 0, j &#x3D; strlen(s) - 1; i &lt; strlen(s) &#x2F; 2 ; i++, j--)</span><br><span class="line">        &#123;</span><br><span class="line">            if(s[i] &#x3D;&#x3D; s[j])</span><br><span class="line">                is_huiwen &#x3D; 1;</span><br><span class="line">            else &#123;</span><br><span class="line">                is_huiwen &#x3D; 0;</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line">            if(is_huiwen &#x3D;&#x3D; 1)</span><br><span class="line">                printf(&quot;yes\n&quot;);</span><br><span class="line">            else if(is_huiwen &#x3D;&#x3D; 0)</span><br><span class="line">                printf(&quot;no\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="T2030"><a href="#T2030" class="headerlink" title="T2030"></a>T2030</h3><p>**汉字机内码</p>
+<p>//在做这题之前我也曾想过计算机如何储存汉字，但没有深究过，感谢2030题给我这个机会🌹🌹</p>
+<p>GBK编码中，汉字占两个字节（两个char类型），且两个char类型对应编码由十六进制转换为十进制均为负数，若想用printf打印出汉字，必需要两个%c相连，否则就不知道会打印什么东西了。如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">char *str &#x3D; &quot;你好，世界！&quot;</span><br><span class="line">char *chr &#x3D; str;</span><br><span class="line">while(*chr !&#x3D; &#39;\0&#39;)</span><br><span class="line">&#123;</span><br><span class="line">	if(*chr &lt; 0)</span><br><span class="line">	&#123;</span><br><span class="line">		printf(&quot;%c%c&quot;, *chr, *(chr+1));</span><br><span class="line">		chr +&#x3D; 2;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+<p>那么此题思路就很简单了：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    getchar();</span><br><span class="line">    char ch[10000];</span><br><span class="line">    while(n--)</span><br><span class="line">    &#123;</span><br><span class="line">        gets(ch);</span><br><span class="line">        int count &#x3D; 0;</span><br><span class="line">        for(int i &#x3D; 0; i &lt; strlen(ch); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(ch[i] &lt; 0)</span><br><span class="line">                count++;</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;%d\n&quot;, count &#x2F; 2);           &#x2F;&#x2F;根据两个字节对应一个汉字的特性</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="T2031"><a href="#T2031" class="headerlink" title="T2031"></a>T2031</h3><p>复习一下十进制转R进制原理：</p>
+<p>十进制数除以R取余并记录余数，最后将每步得到的余数倒置即可。</p>
+<h3 id="T2032"><a href="#T2032" class="headerlink" title="T2032"></a>T2032</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    int tri[30][30];</span><br><span class="line"></span><br><span class="line">    while((scanf(&quot;%d&quot;, &amp;n)) !&#x3D; EOF)</span><br><span class="line">    &#123;</span><br><span class="line">        tri[0][0] &#x3D; 1;</span><br><span class="line">        tri[0][1] &#x3D; 0;</span><br><span class="line">        for(int i &#x3D; 0; i &lt; n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int j &#x3D; 0; j &lt;&#x3D; i; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(j &#x3D;&#x3D; 0 &amp;&amp; i !&#x3D; 0)</span><br><span class="line">                &#123;</span><br><span class="line">                    tri[i][j] &#x3D; 1;</span><br><span class="line">                    printf(&quot;%d &quot;, tri[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">                if(j &#x3D;&#x3D; 0 &amp;&amp; i &#x3D;&#x3D; 0)</span><br><span class="line">                    printf(&quot;%d&quot;, tri[i][j]);</span><br><span class="line">                if(j &#x3D;&#x3D; i &amp;&amp; i !&#x3D; 0)</span><br><span class="line">                &#123;</span><br><span class="line">                    tri[i][j] &#x3D; 1;</span><br><span class="line">                    printf(&quot;%d&quot;, tri[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">                else if(j !&#x3D; 0 &amp;&amp; j !&#x3D; i)&#123;</span><br><span class="line">                    tri[i][j] &#x3D; tri[i-1][j] + tri[i-1][j-1] ;</span><br><span class="line">                    printf(&quot;%d &quot;, tri[i][j]);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            printf(&quot;\n&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>调PR调了半天/恼，每行后面不让多出来一个空格orz</p>
+<p>后来发现其实可以在给每行末尾添加一个0值、</p>
+<p>网上的一个没有用二维数组的版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	int i, j, n;</span><br><span class="line">	int yh[32];</span><br><span class="line"></span><br><span class="line">	while(scanf(&quot;%d&quot;,&amp;n) !&#x3D; EOF)</span><br><span class="line">	&#123;</span><br><span class="line">		memset(yh, 0, sizeof(yh));&#x2F;&#x2F;初始化</span><br><span class="line">		yh[0]&#x3D;1;</span><br><span class="line">		for(i &#x3D; 0; i &lt; n; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;%d&quot;, 1);</span><br><span class="line">			for(j &#x3D; i; j; j--)</span><br><span class="line">				yh[j] +&#x3D; yh[j-1];</span><br><span class="line">			for(j &#x3D; 1; j &lt;&#x3D; i; j++)</span><br><span class="line">				printf(&quot; %d&quot;, yh[j]);&#x2F;&#x2F;注意空格</span><br><span class="line">			putchar(&#39;\n&#39;);</span><br><span class="line">		&#125;</span><br><span class="line">		putchar(&#39;\n&#39;);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>相当于每次输出一行后，该一维数组的值即为该行，然后每个位置自身加上前面一个数即可得到新行。</p>
+<h3 id="T2033"><a href="#T2033" class="headerlink" title="T2033"></a>T2033</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;n);</span><br><span class="line">    int ah, am, as, bh, bm, bs, rh, rm, rs;</span><br><span class="line">    int flag &#x3D; 0;        &#x2F;&#x2F;是否进位的标记，可以共用</span><br><span class="line">    while(n--)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(&quot;%d %d %d %d %d %d&quot;, &amp;ah, &amp;am, &amp;as, &amp;bh, &amp;bm, &amp;bs);</span><br><span class="line">        if((bs + as) &lt; 60)&#123;</span><br><span class="line">            rs &#x3D; bs + as;</span><br><span class="line">            flag &#x3D; 0;</span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">                rs &#x3D; bs + as - 60;</span><br><span class="line">                flag &#x3D; 1;</span><br><span class="line">        &#125;</span><br><span class="line">        if((bm + am) &lt; 60 &amp;&amp; flag &#x3D;&#x3D; 0)&#123;</span><br><span class="line">            rm &#x3D; bm + am;</span><br><span class="line">            flag &#x3D; 0;</span><br><span class="line">        &#125;</span><br><span class="line">        if((bm + am) &lt; 60 &amp;&amp; flag &#x3D;&#x3D; 1)&#123;</span><br><span class="line">            rm &#x3D; bm + am + 1;</span><br><span class="line">            flag &#x3D; 0;</span><br><span class="line">        &#125;</span><br><span class="line">        if((bm + am) &gt; 60 &amp;&amp; flag &#x3D;&#x3D; 0)&#123;</span><br><span class="line">            rm &#x3D; bm + am - 60;</span><br><span class="line">            flag &#x3D; 1;</span><br><span class="line">        &#125;</span><br><span class="line">        if((bm + am) &gt; 60 &amp;&amp; flag &#x3D;&#x3D; 1)&#123;</span><br><span class="line">            rm &#x3D; bm + am - 60 + 1;</span><br><span class="line">            flag &#x3D; 1;</span><br><span class="line">        &#125;</span><br><span class="line">        if(flag)</span><br><span class="line">            rh &#x3D; ah + bh + 1;</span><br><span class="line">        else rh &#x3D; ah + bh;</span><br><span class="line">        printf(&quot;%d %d %d\n&quot;, rh, rm, rs);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -193,7 +372,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#4/">学习笔记#4</a>
+      <a class="article-title" href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#4/">C学习笔记#4</a>
     </h1>
   
 
@@ -201,7 +380,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="学习笔记-4"><a href="#学习笔记-4" class="headerlink" title="学习笔记#4"></a>学习笔记#4</h1><h4 id="结构体、联合体、枚举类型结构体"><a href="#结构体、联合体、枚举类型结构体" class="headerlink" title="结构体、联合体、枚举类型结构体"></a>结构体、联合体、枚举类型结构体</h4><p>（html直呼内行</p>
+        <h4 id="结构体、联合体、枚举类型结构体"><a href="#结构体、联合体、枚举类型结构体" class="headerlink" title="结构体、联合体、枚举类型结构体"></a>结构体、联合体、枚举类型结构体</h4><p>（html直呼内行</p>
 <p>能力有限，竟然用最基础的冒泡完成题目orz，需要多学点排序算法了233</p>
 <p>然后目前这些东西给我的感觉就是让程序更有逻辑、条理清晰，编写更方便，比起一个一个创建数组简直好了不知道多少倍。</p>
 <h4 id="main函数の参数（argc、-argv）"><a href="#main函数の参数（argc、-argv）" class="headerlink" title="main函数の参数（argc、 argv）"></a>main函数の参数（argc、 argv）</h4><p>这个内容书上貌似没有讲解（？通过上网查询，编写了一个简单的程序测试了一下这两行个参数。argc即为通过命令行向main函数传递的参数个数；arcv[]是指针数组，用来存放指向字符串参数的指针，每一个元素指向一个参数。</p>
@@ -212,6 +391,8 @@
       <a data-url="http://yoursite.com/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#4/" data-id="ckhgdw7kg0002dkv5dw0lbbc4" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
+
     </footer>
   </div>
   
@@ -233,7 +414,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#3/">学习笔记#3</a>
+      <a class="article-title" href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#3/">C学习笔记#3</a>
     </h1>
   
 
@@ -241,7 +422,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="学习笔记-3"><a href="#学习笔记-3" class="headerlink" title="学习笔记#3"></a>学习笔记#3</h1><h5 id="1-为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？"><a href="#1-为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？" class="headerlink" title="1.为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？"></a>1.为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？</h5><p>我的看法：在内存中开辟一块连续且大小相同的空间比较容易，而开辟出连续但大小不相同的的空间则不太容易控制，且影响运行时间。C语言中各数据类型分配的储存空间都不同，故而具有相同数据类型方便操作。</p>
+        <h5 id="1-为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？"><a href="#1-为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？" class="headerlink" title="1.为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？"></a>1.为什么C语言数组中，构成数组的各个元素必须具有相同的数据类型？</h5><p>我的看法：在内存中开辟一块连续且大小相同的空间比较容易，而开辟出连续但大小不相同的的空间则不太容易控制，且影响运行时间。C语言中各数据类型分配的储存空间都不同，故而具有相同数据类型方便操作。</p>
 <h5 id="2-程序一"><a href="#2-程序一" class="headerlink" title="2.程序一"></a>2.程序一</h5><p>​    顺利完成。上次学了递归，还没有掌握，正好用这个题练练。</p>
 <h5 id="3-程序二"><a href="#3-程序二" class="headerlink" title="3.程序二"></a>3.程序二</h5><p>​    看了书上的atio()函数，尝试用了一下，但是每次只要一改成这个函数就没有输出….不知道原因。</p>
 <p>​    思路借鉴了网上程序，利用一个flag值判断是否是在一个数字之后。</p>
@@ -270,6 +451,8 @@
       <a data-url="http://yoursite.com/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#3/" data-id="ckhgdw7jz0000dkv55jz89n36" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
+
     </footer>
   </div>
   
@@ -291,7 +474,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#2/">学习笔记#2</a>
+      <a class="article-title" href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#2/">C学习笔记#2</a>
     </h1>
   
 
@@ -299,7 +482,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="学习笔记-2"><a href="#学习笔记-2" class="headerlink" title="学习笔记#2"></a>学习笔记#2</h1><h4 id="1-全局变量与局部变量"><a href="#1-全局变量与局部变量" class="headerlink" title="1.全局变量与局部变量"></a>1.全局变量与局部变量</h4><h5 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h5><p>作用域默认为整个程序</p>
+        <h4 id="1-全局变量与局部变量"><a href="#1-全局变量与局部变量" class="headerlink" title="1.全局变量与局部变量"></a>1.全局变量与局部变量</h4><h5 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h5><p>作用域默认为整个程序</p>
 <h5 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h5><p>作用域仅限于函数内部</p>
 <h5 id="易错点"><a href="#易错点" class="headerlink" title="*易错点"></a>*易错点</h5><p>1.尽量不要使用重复的变量名。虽然在局部函数中变量的使用遵循就近原则，且作用域不同变量储存的位置也不同，但使用重复的变量名是个很不好的习惯；</p>
 <p>2.{ }可以划分出一块独立的函数作用域、代码块作用域（循环、判断条件等），独立于所有{ }之外的是源文件，包括.c .h以及全局变量。</p>
@@ -317,6 +500,8 @@
       <a data-url="http://yoursite.com/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#2/" data-id="ckhgdw7ka0001dkv51mal87r4" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
+
     </footer>
   </div>
   
@@ -338,7 +523,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#1/">学习笔记#1</a>
+      <a class="article-title" href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#1/">C学习笔记#1</a>
     </h1>
   
 
@@ -346,7 +531,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="学习笔记-1"><a href="#学习笔记-1" class="headerlink" title="学习笔记#1"></a>学习笔记#1</h1><h4 id="1-代码到-exe可执行文件"><a href="#1-代码到-exe可执行文件" class="headerlink" title="1.代码到.exe可执行文件"></a>1.代码到.exe可执行文件</h4><p>原来刚学C语言的时候每次文件夹中都会生成可执行文件，但是没有太关注原理，最多也就知道日常报错的编译部分。经查阅资料，我了解到一个C语言程序代码到可执行文件的前世今生是：源代码→编译→目标代码→链接→可执行代码。</p>
+        <h4 id="1-代码到-exe可执行文件"><a href="#1-代码到-exe可执行文件" class="headerlink" title="1.代码到.exe可执行文件"></a>1.代码到.exe可执行文件</h4><p>原来刚学C语言的时候每次文件夹中都会生成可执行文件，但是没有太关注原理，最多也就知道日常报错的编译部分。经查阅资料，我了解到一个C语言程序代码到可执行文件的前世今生是：源代码→编译→目标代码→链接→可执行代码。</p>
 <h5 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h5><p>将源代码文件(.c)通过编译器生成目标代码文件(.obj)，源代码即为程序员手打内容，包含头文件与主函数等部分。目标代码文件则储存经编译器转换后的机器语言代码。</p>
 <h5 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h5><p>通过链接器将库代码(库其实也就是一组提前写好的目标文件的打包)与启动代码等与目标代码文件(.obj)链接，生成可执行代码。</p>
 <h4 id="2-ASCII码与char类型"><a href="#2-ASCII码与char类型" class="headerlink" title="2.ASCII码与char类型"></a>2.ASCII码与char类型</h4><p>ASCII 全称为 ( American Standard Code for Information Interchange)，简单的说，就是用 7 位二进制 ( 即 十进制表示为 0 到 127 ) 去编码我们生活中常见的数字，大小写字母，标点符号以及一些特殊的控制字符。这样规定的原因是计算机不认字符只认数字。当我们想使用某字符，可以存储其对应的ASCII码值，再用printf格式化输出。所以当我们声明变量初始化时，如char a = ‘a’，实际上计算机储存的仍是97/0x61。</p>
@@ -383,6 +568,8 @@
       <a data-url="http://yoursite.com/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#1/" data-id="ckhgdrty70000e8v5673c6tm4" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li></ul>
+
     </footer>
   </div>
   
@@ -454,7 +641,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">C学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%98%AF%E5%88%B7%E9%A2%98%E5%91%80%EF%BC%81/" rel="tag">是刷题呀！</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">C学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag">学习笔记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%98%AF%E5%88%B7%E9%A2%98%E5%91%80%EF%BC%81/" rel="tag">是刷题呀！</a></li></ul>
     </div>
   </div>
 
@@ -464,7 +651,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">C学习笔记</a> <a href="/tags/%E6%98%AF%E5%88%B7%E9%A2%98%E5%91%80%EF%BC%81/" style="font-size: 10px;">是刷题呀！</a>
+      <a href="/tags/C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10px;">C学习笔记</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 20px;">学习笔记</a> <a href="/tags/%E6%98%AF%E5%88%B7%E9%A2%98%E5%91%80%EF%BC%81/" style="font-size: 15px;">是刷题呀！</a>
     </div>
   </div>
 
@@ -473,7 +660,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li></ul>
     </div>
   </div>
 
@@ -486,23 +673,23 @@
       <ul>
         
           <li>
+            <a href="/2020/12/15/JavaScript%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">JavaScript 学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/14/Leetcode%E5%88%B7%E9%A2%98%E4%B9%8B%E7%AE%80%E5%8D%95/">Leetcode简单难度AC题解</a>
+          </li>
+        
+          <li>
             <a href="/2020/11/21/#%20%E6%9D%AD%E7%94%B5OJ/">杭电OJ（2000题始）AC题解</a>
           </li>
         
           <li>
-            <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#4/">学习笔记#4</a>
+            <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#4/">C学习笔记#4</a>
           </li>
         
           <li>
-            <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#3/">学习笔记#3</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#2/">学习笔记#2</a>
-          </li>
-        
-          <li>
-            <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#1/">学习笔记#1</a>
+            <a href="/2020/11/13/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0#3/">C学习笔记#3</a>
           </li>
         
       </ul>
